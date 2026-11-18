@@ -807,11 +807,11 @@ if __name__ == "__main__":
 
     print("进化结束时训练集内部CV最高准确率:", reference_accuracy)
     print("训练集内部CV最低允许准确率:", accuracy_floor)
-    print("最终稀疏特征子集的训练集内部CV准确率:", test_accuracy)
+    print("最终稀疏特征子集的训练集内部CV准确率:", final_inner_cv_accuracy)
     print("训练集内部CV实际下降百分点:", (reference_accuracy - final_inner_cv_accuracy) * 100)
 
     print("最终模型训练集准确率:", train_accuracy)
-    print("最终模型独立测试集准确率:", final_inner_cv_accuracy)
+    print("最终模型独立测试集准确率:", test_accuracy)
 
     print("说明: 独立测试集没有参与ReliefF、top_select、E_NSGA2和后向消除，只在最后评估一次。")
 
