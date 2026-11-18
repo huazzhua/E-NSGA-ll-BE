@@ -750,11 +750,7 @@ if __name__ == "__main__":
         initial_dim=dim
     )
 
-    # 结束计时：只统计搜索阶段和选择阶段之前的主要运行时间
-    end_time = time.perf_counter()
-    running_time = end_time - start_time
 
-    print(f"算法运行时间: {running_time:.4f} 秒")
 
     # =====================================================
     # 6. 后向消除仍然只在训练集内部CV上完成
@@ -774,7 +770,11 @@ if __name__ == "__main__":
             candidate_limit=PRUNE_CANDIDATE_LIMIT
         )
     )
+    # 结束计时：只统计搜索阶段和选择阶段之前的主要运行时间
+    end_time = time.perf_counter()
+    running_time = end_time - start_time
 
+    print(f"算法运行时间: {running_time:.4f} 秒")
     # =====================================================
     # 7. 最后一步，才使用独立测试集评估一次
     # =====================================================
